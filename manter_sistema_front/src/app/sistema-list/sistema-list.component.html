@@ -1,0 +1,29 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Sistemas</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Sigla</th>
+          <th>Email</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sistema of sistemas | async">
+          <td>{{sistema.descricao}}</td>
+          <td>{{sistema.sigla}}</td>
+          <td>{{sistema.email}}</td>
+          <td><button (click)="deleteSistema(sistema.id)" class="btn btn-danger">Delete</button>
+              <button (click)="updateSistema(sistema.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+              <button (click)="sistemaDetails(sistema.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
